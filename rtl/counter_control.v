@@ -31,13 +31,13 @@ module counter_control
     case(div_val) 
 	   4'b0000: limit = 8'd0  ; 
 	   4'b0010: limit = 8'd3  ;
-      4'b0011: limit = 8'd7  ;
-		4'b0100: limit = 8'd15 ;
-		4'b0101: limit = 8'd31 ;
-		4'b0110: limit = 8'd63 ;
-		4'b0111: limit = 8'd127;
-		4'b1000: limit = 8'd255;
-		default: limit = 8'd1  ; 
+           4'b0011: limit = 8'd7  ;
+	   4'b0100: limit = 8'd15 ;
+	   4'b0101: limit = 8'd31 ;
+	   4'b0110: limit = 8'd63 ;
+	   4'b0111: limit = 8'd127;
+	   4'b1000: limit = 8'd255;
+	   default: limit = 8'd1  ; 
     endcase 
   end 
 
