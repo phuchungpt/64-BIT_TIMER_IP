@@ -138,7 +138,7 @@ module register
 		  error <= error1 | error2;
 	   else 
 		  error <= 1'b0; 
-	  end else 
+    end else 
                   error <= 1'b0; 
   end 
   
