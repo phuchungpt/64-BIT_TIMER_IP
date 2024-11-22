@@ -53,8 +53,8 @@ module register
     if(!rst_n) begin 
 	 // reg_tcr 
 	   div_val  <= 4'b0001; 
-		div_en   <= 1'b0   ; 
-		timer_en <= 1'b0   ;
+	   div_en   <= 1'b0   ; 
+	   timer_en <= 1'b0   ;
 	 // reg_tcmp0/1
 	   tcmp     <= 64'hFFFF_FFFF_FFFF_FFFF; 
 	 // reg_tier 
@@ -65,21 +65,21 @@ module register
 	   case(addr) 
 		  ADDR_TCR: begin 
 		    if(!error) begin 
-			   div_val            <= (pstrb[1])? wdata[11:8]: div_val           ;
-				{div_en, timer_en} <= (pstrb[0])? wdata[1:0] : {div_en, timer_en};
-			 end 
+			div_val            <= (pstrb[1])? wdata[11:8]: div_val           ;
+			{div_en, timer_en} <= (pstrb[0])? wdata[1:0] : {div_en, timer_en};
+		    end 
 		  end 
 		  ADDR_TCMP0: begin 
 		    tcmp[31:24] <= (pstrb[3])? wdata[31:24]: tcmp[31:24];
-			 tcmp[23:16] <= (pstrb[2])? wdata[23:16]: tcmp[23:16];
-			 tcmp[15:8]  <= (pstrb[1])? wdata[15:8] : tcmp[15:8] ;
-			 tcmp[7:0]   <= (pstrb[0])? wdata[7:0]  : tcmp[7:0]  ;
+		    tcmp[23:16] <= (pstrb[2])? wdata[23:16]: tcmp[23:16];
+		    tcmp[15:8]  <= (pstrb[1])? wdata[15:8] : tcmp[15:8] ;
+		    tcmp[7:0]   <= (pstrb[0])? wdata[7:0]  : tcmp[7:0]  ;
 		  end  
 		  ADDR_TCMP1: begin 
 		    tcmp[63:56] <= (pstrb[3])? wdata[31:24]: tcmp[63:56];
-			 tcmp[55:48] <= (pstrb[2])? wdata[23:16]: tcmp[55:48];
-			 tcmp[47:40] <= (pstrb[1])? wdata[15:8] : tcmp[47:40];
-			 tcmp[39:32] <= (pstrb[0])? wdata[7:0]  : tcmp[39:32];
+		    tcmp[55:48] <= (pstrb[2])? wdata[23:16]: tcmp[55:48];
+		    tcmp[47:40] <= (pstrb[1])? wdata[15:8] : tcmp[47:40];
+	            tcmp[39:32] <= (pstrb[0])? wdata[7:0]  : tcmp[39:32];
 		  end 
 		  ADDR_TIER : int_en   <= (pstrb[0])? wdata[0]: int_en  ; 
 		  ADDR_THCSR: halt_req <= (pstrb[0])? wdata[0]: halt_req;
@@ -101,14 +101,14 @@ module register
 	  if(tim_pready) begin 
 	    case(addr)
 		   ADDR_TCR  : rdata <= {20'h0, div_val, 6'h0, div_en, timer_en};  
-			ADDR_TDR0 : rdata <= cnt[31:0] 										 ; 
-			ADDR_TDR1 : rdata <= cnt[63:32]								 		 ;
-			ADDR_TCMP0: rdata <= tcmp[31:0]										 ;
-			ADDR_TCMP1: rdata <= tcmp[63:32]										 ;
-			ADDR_TIER : rdata <= {31'h0, int_en}								 ;
-			ADDR_TISR : rdata <= {31'h0, int_st}								 ;
-			ADDR_THCSR: rdata <= {30'h0, halt_ack, halt_req}				 ;
-			default   : rdata <= 32'h0												 ;
+			ADDR_TDR0 : rdata <= cnt[31:0] 				; 
+			ADDR_TDR1 : rdata <= cnt[63:32]				;
+			ADDR_TCMP0: rdata <= tcmp[31:0]				;
+			ADDR_TCMP1: rdata <= tcmp[63:32]			;
+		    ADDR_TIER : rdata <= {31'h0, int_en}			;
+			ADDR_TISR : rdata <= {31'h0, int_st}			;
+			ADDR_THCSR: rdata <= {30'h0, halt_ack, halt_req}	;
+			default   : rdata <= 32'h0				;
 		 endcase 
 	  end 
 	end else begin 
@@ -134,12 +134,12 @@ module register
     if(tdr_wr_sel) begin 
 	   if(wdata[11:8] > 4'b1000)
 		  error <= (pstrb[1])? 1'b1: 1'b0; 
-		else if(timer_en)
-		  error = error1 | error2;
-		else 
-		  error = 1'b0; 
-	 end else 
-      error <= 1'b0; 
+	   else if(timer_en)
+		  error <= error1 | error2;
+	   else 
+		  error <= 1'b0; 
+	  end else 
+                  error <= 1'b0; 
   end 
   
   // Counter clear 
