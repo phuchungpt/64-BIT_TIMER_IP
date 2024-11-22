@@ -43,7 +43,7 @@ WAVEFORM
 
 - ... 
 
-Details can be found in the design specification !!
+For more information and detailed content, please refer to the design specification. !!
 
 COVERAGE
 
