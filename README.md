@@ -15,6 +15,7 @@ https://chromitem-soc.readthedocs.io/en/latest/clint.html
 
 
 The timer has following features:
+
 ▪ 64-bit counter up.
 
 ▪ 4KB register address space 
