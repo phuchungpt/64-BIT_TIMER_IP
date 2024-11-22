@@ -20,7 +20,7 @@ module counter
    if(!rst_n)
 	  cnt        <= 64'h0; 
    else if (cnt_clr) 
-     cnt        <= 64'h0; 
+          cnt        <= 64'h0; 
 	else if (tdr1_wr_sel) begin 
 	  cnt[63:56] <= (pstrb[3])? wdata[31:24]: cnt[63:56]; 
 	  cnt[55:48] <= (pstrb[2])? wdata[23:16]: cnt[55:48]; 
