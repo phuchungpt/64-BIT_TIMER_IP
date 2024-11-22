@@ -1,4 +1,5 @@
 64-BIT_TIMER_IP
+
 ▪ Timer is an essential module for every chip.
 ▪ This is used to generate accurate timing interval or controlling the timing of various
 operations within the circuit. Timer can be used in various application: pulse
