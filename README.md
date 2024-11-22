@@ -46,7 +46,9 @@ WAVEFORM
 Details can be found in the design specification !!
 
 COVERAGE
-![image](https://github.com/user-attachments/assets/580c94a8-7e5c-416a-bf35-345bd59a63a3)
+
+![image](https://github.com/user-attachments/assets/08756668-490f-4cc7-9881-750e10150fa0)
+
 ![image](https://github.com/user-attachments/assets/e69e4622-b03a-4c63-bc45-79b93c91185a)
 
 Tool used:
