@@ -47,9 +47,7 @@ For more information and detailed content, please refer to the design specificat
 
 COVERAGE
 
-![image](https://github.com/user-attachments/assets/08756668-490f-4cc7-9881-750e10150fa0)
-
-![image](https://github.com/user-attachments/assets/e69e4622-b03a-4c63-bc45-79b93c91185a)
+![image](https://github.com/user-attachments/assets/77925b8c-1d6e-4ca0-b50e-38eaa85489f2)
 
 Tool used:
 
