@@ -152,7 +152,7 @@ task write_transfer(input [11:0] addr, input [31:0] pwdata);
 	   #1;
 		if(cnt != written_data) begin
 			$display("=============================================================");
-			$display("t=%10d FAIL: cnt's value is not correct, expected = %h, actual = %h", $stime, written_data, cnt); =\n");
+			$display("t=%10d FAIL: cnt's value is not correct, expected = %h, actual = %h", $stime, written_data, cnt); 
 			$display("=============================================================\n");			
 			#100;
 			$finish;
